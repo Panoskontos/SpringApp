@@ -36,4 +36,10 @@ public class UserService {
         return userRepo.findById(id);
     }
 
+    public  User updateUserName(Long id, String name){
+        User u1 = userRepo.getReferenceById(id);
+        u1.setName(name);
+        return userRepo.save(u1);
+    }
+
 }
